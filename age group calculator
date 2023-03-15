@@ -1,0 +1,90 @@
+#include <iostream>
+#include <string>
+
+using namespace std; 
+
+//declared structure with variables
+struct age {
+	string name;
+	string lastName;
+	int yearOfBirth;
+	string response; 
+};
+
+int main() {
+
+	//created structure and stored it in myAge
+	age myAge;
+	myAge.yearOfBirth;
+	myAge.name;
+	myAge.lastName;
+	myAge.response;
+
+
+	//do while for user to control the loop
+
+	do {
+
+		//takes user inputs for myAge variables
+	
+		cout << "Enter first name: " << "\n";
+		cin >> myAge.name;
+		cout << "Enter last name: " << "\n";
+		cin >> myAge.lastName;
+		cout << "Enter year of birth: " << "\n";
+		cin >> myAge.yearOfBirth;
+		cout << "\n"; 
+
+		//if user age is not in a numeric format it stops the loop and asks user to reenter
+
+		if (cin.fail()) {
+			cout << "Error, enter year in a numeric format: ";
+			cin.clear();
+			cin.ignore(123, '\n');
+			cin >> myAge.yearOfBirth;
+		}
+
+		//prints with conditional operator
+
+	    if (myAge.yearOfBirth >= 2013 && myAge.yearOfBirth <= 2023)
+		{
+		cout << myAge.name << " " << myAge.lastName << " is Gen Alpha." "\n";
+		}
+		else if (myAge.yearOfBirth >= 1997 && myAge.yearOfBirth <= 2012)
+		{
+		cout << myAge.name << " " << myAge.lastName << " is Gen Z." "\n";
+		}
+		else if (myAge.yearOfBirth >= 1981 && myAge.yearOfBirth <= 1996)
+		{
+			cout << myAge.name << " " << myAge.lastName << " is a Millenial." "\n";
+		}
+		else if (myAge.yearOfBirth <= 1980 && myAge.yearOfBirth >= 1965)
+		{
+			cout << myAge.name << " " << myAge.lastName << " is Gen X.""\n";
+		}
+		else if (myAge.yearOfBirth <= 1965 && myAge.yearOfBirth >= 1946)
+		{
+			cout << myAge.name << " " << myAge.lastName << " is a baby boomer!" "\n";
+		}
+		else if (myAge.yearOfBirth <= 1945 && myAge.yearOfBirth >= 1928)
+		{
+			cout << myAge.name << " " << myAge.lastName << " is the silent generation!" "\n";
+		}
+		else
+		{
+			cout << myAge.name << " " << myAge.lastName << " is ancient." "\n";
+		}
+
+		cout << "\n";
+		cout << "wannna go again? yes or no?" << "\n";
+		cin >> myAge.response;
+		cout << "\n"; 
+
+	} while (myAge.response == "yes" || myAge.response == "YES" || myAge.response == "Yes");   // if input yes loop will keep on going. 
+
+	//if no it will stop
+
+	return 0;
+
+	 
+}
